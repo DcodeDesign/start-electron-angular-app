@@ -1,0 +1,57 @@
+{
+  "GENERATE_BRANCH": {
+    "TITLE_FORM": "Generate Branch Name",
+    "GENERATE_BUTTON": "GENERATE",
+    "PREVIEW": "Preview",
+    "STATUS": {
+      "TASK": "Task",
+      "BUGFIX": "Bugfix",
+      "HOTFIX": "Hotfix",
+      "IMPROVEMENT": "Improvement"
+    },
+    "LIST_OF_BRANCHES": "List of Branches",
+    "DETAIL_WINDOW": {
+      "NAME": "Name",
+      "DESCRIPTION": "Description",
+      "LINK": "Link",
+      "ID": "Id",
+      "STATUS": "Status",
+      "TEXT": "Text"
+    }
+  },
+  "EVENTS": {
+    "TITLE_EDIT_FORM": "Edit Event",
+    "SAVE_BUTTON": "SAVE",
+    "NEXT_BUTTON": "Next",
+    "ADD_BUTTON": "Add",
+    "CHOICE_OF_STATUS": "Choose a status",
+    "PREVIOUS_BUTTON": "Previous",
+    "STATUS": {
+      "TO_DO": "To Do",
+      "IN_PROGRESS": "In Progress",
+      "COMPLETED": "Completed"
+    },
+    "LIST_OF_EVENTS": "List of Events"
+  },
+  "DAY_OF_WEEK": {
+    "MONDAY": "Monday",
+    "TUESDAY": "Tuesday",
+    "WEDNESDAY": "Wednesday",
+    "THURSDAY": "Thursday",
+    "FRIDAY": "Friday",
+    "SATURDAY": "Saturday",
+    "SUNDAY": "Sunday"
+  },
+  "DAY_OF_WEEK_SHORT": {
+    "MONDAY": "Mon",
+    "TUESDAY": "Tue",
+    "WEDNESDAY": "Wed",
+    "THURSDAY": "Thu",
+    "FRIDAY": "Fri",
+    "SATURDAY": "Sat",
+    "SUNDAY": "Sun"
+  },
+  "VALIDATION": {
+    "URL": "Please enter a valid URL."
+  }
+}

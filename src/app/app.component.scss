@@ -1,0 +1,21 @@
+nb-actions {
+  padding-top: 22px;
+
+  nb-action {
+    cursor: pointer;
+    opacity: 0.4;
+
+    &.active {
+      opacity: 1;
+    }
+  }
+
+  nb-action {
+    cursor: pointer;
+  }
+
+}
+
+.container {
+  display: flex;
+}

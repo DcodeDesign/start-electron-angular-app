@@ -1,0 +1,33 @@
+<nb-layout>
+  <nb-layout-header fixed>
+    <div style="width: 100%; display: flex; justify-content: space-between;">
+      <nb-actions size="small">
+        <nb-action routerLink="/events" routerLinkActive="active">Events</nb-action>
+        <nb-action routerLink="/branches" routerLinkActive="active">Branches</nb-action>
+      </nb-actions>
+  
+      <nb-actions size="small">
+        <nb-action (click)="useLanguage(languageEnum.EN)" [class.active]="currentLang === languageEnum.EN"> {{ languageEnum.EN }} </nb-action>
+        <nb-action (click)="useLanguage(languageEnum.FR)" [class.active]="currentLang === languageEnum.FR"> {{ languageEnum.FR }} </nb-action>
+      </nb-actions>
+    </div>
+  </nb-layout-header>
+
+  <nb-layout-column>
+    <router-outlet></router-outlet>
+  </nb-layout-column>
+
+  <nb-layout-footer fixed>
+    <div class="container">
+     
+      <!-- Bouton pour exporter la base de données -->
+      <button nbButton size="tiny" status="default"  (click)="exportDb()">Exporter la base de données</button>
+    
+      <!-- Input et bouton pour importer la base de données -->
+      <div class="import-section">
+        <input nbInput type="file" (change)="importDb($event)">
+      </div>
+    </div>
+  </nb-layout-footer>
+
+</nb-layout>

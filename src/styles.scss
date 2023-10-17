@@ -1,0 +1,51 @@
+@use 'themes' as *;
+
+@use '@nebular/theme/styles/globals' as *;
+
+@include nb-install() {
+  @include nb-theme-global();
+};
+/* You can add global styles to this file, and also import other style files */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #151930;
+}
+
+.cet-titlebar {
+  height: 26px;
+}
+
+.cet-container {
+  top: 0!important;
+}
+
+.event-edition-window, .branch-edition-window, .branch-detail-window {
+  width: 90%; 
+}
+
+.tox-tinymce, .tox-editor-header, .tox-menubar, .tox-toolbar__primary, .tox-statusbar {
+  background-color: #192038 !important;
+  background: #192038 !important;  
+  
+}
+
+.mce-tinymce, .mce-container-body, #code_ifr {
+  min-height: 100% !important;
+  background-color: #192038 !important;
+  background: #192038 !important;  
+}
+
+.tox .tox-edit-area__iframe {
+  background-color: #192038 !important;
+  color:  white !important; 
+}
+
+.status-field.flex-item > nb-select > button {
+  border-top-right-radius: 0!important;
+  border-bottom-right-radius: 0!important;
+  min-width: 150px;
+}
+

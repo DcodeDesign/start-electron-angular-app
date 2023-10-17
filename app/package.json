@@ -1,0 +1,14 @@
+{
+  "name": "angular-electron",
+  "description": "Angular Electron sample",
+  "author": {
+    "name": "Thomas Gravy",
+    "email": "gravythomas@gmail.com"
+  },
+  "version": "13.0.0",
+  "main": "main.js",
+  "private": true,
+  "dependencies": {
+    "custom-electron-titlebar": "^4.2.7"
+  }
+}

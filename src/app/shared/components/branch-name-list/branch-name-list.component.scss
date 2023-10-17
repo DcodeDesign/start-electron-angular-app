@@ -1,0 +1,20 @@
+:host {
+    .menu-list-of-branch {
+        display: flex;
+        justify-content: space-between
+    }
+
+    .mr-10 {
+        margin-right: 10px;
+    }
+
+    .ml-10 {
+        margin-left: 10px;
+    }
+
+    .flex-item {
+        display: flex; 
+        justify-content: space-between;
+    }
+    
+}

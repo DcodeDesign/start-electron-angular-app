@@ -1,0 +1,40 @@
+.branch-form {
+    .form-field, .form-button {
+        margin: 10px 0;
+
+        &.flex-item {
+            display: flex; 
+            justify-content: space-between;
+        }
+    }
+
+   
+
+    .field-id {
+        width: 18%;
+        border-radius: 0!important;
+        border-radius: 0!important;
+    }
+
+    .field-text {
+        border-top-left-radius: 0!important;
+        border-bottom-left-radius: 0px!important;
+    } 
+}
+
+.width-50 {
+    width: 50%;
+}
+
+.preview {
+    display: flex;
+    justify-content: center;
+    
+    p {
+        margin: 25px 0 5px 0;
+        font-size: 16px;
+    }
+}
+
+
+

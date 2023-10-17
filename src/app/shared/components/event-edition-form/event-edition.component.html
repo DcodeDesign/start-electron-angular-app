@@ -1,0 +1,58 @@
+<form [formGroup]="eventForm" (ngSubmit)="onSubmit()" class="event-form">
+    <div class="form-field">
+        <input nbInput nbInput fullWidth placeholder="Date" [nbDatepicker]="datepicker" formControlName="date">
+        <nb-datepicker #datepicker></nb-datepicker>
+    </div>
+
+    <div class="form-field">
+        <nb-select fullWidth formControlName="status">
+            <nb-option value="" disabled selected>{{ 'EVENTS.CHOICE_OF_STATUS' | translate }}</nb-option>
+            <nb-option [value]="eventStatusEnum.TO_DO">{{ eventStatusEnum.TO_DO }}</nb-option>
+            <nb-option [value]="eventStatusEnum.IN_PROGRESS">{{ eventStatusEnum.IN_PROGRESS }}</nb-option>
+            <nb-option [value]="eventStatusEnum.COMPLETED">{{ eventStatusEnum.COMPLETED }}</nb-option>
+        </nb-select>
+    </div>
+
+    <div class="form-field">
+        <input
+        fullWidth
+        formControlName="branch"
+        nbInput
+        type="text"
+        placeholder="Branch"
+        [nbAutocomplete]="autoControl" />
+  
+      <nb-autocomplete #autoControl>
+  
+        <nb-option *ngFor="let option of filteredControlOptions$ | async" [value]="option">
+          {{ option }}
+        </nb-option>
+  
+      </nb-autocomplete>
+    </div>
+  
+    <div class="form-field">
+        <editor apiKey="tjd5ua3k0p1x394lqtsxc1lru3tqiwtoa63ik99o81fvfwdt" 
+                formControlName="text"
+                [init]="configEditor"></editor>
+    </div>
+
+    <div class="form-field">
+        <input nbInput
+               fullWidth 
+               placeholder="Hour (HH:MM)"
+               type="text"
+               formControlName="hour"
+               [nbTimepicker]="timepicker"/>
+        <nb-timepicker #timepicker></nb-timepicker>
+    </div>
+
+    <div class="form-button">
+        <button nbButton 
+                status="success" 
+                fullWidth 
+                type="submit" 
+                [disabled]="!eventForm.valid">{{ 'EVENTS.SAVE_BUTTON' | translate }}</button>
+    </div>
+    
+</form>

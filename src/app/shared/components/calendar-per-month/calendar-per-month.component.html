@@ -1,0 +1,36 @@
+<nb-card>
+    <nb-card-body class="example-items-rows">
+        <div class="calendar-navigation">
+            <button nbButton 
+                    (click)="previousMonth()" 
+                    status="primary"><nb-icon icon="arrow-ios-back-outline"></nb-icon> {{ 'EVENTS.PREVIOUS_BUTTON' | translate }} </button>
+            
+                    <h4>{{currentDate | date:'MMMM yyyy'}}</h4>
+
+            <button nbButton 
+                    (click)="nextMonth()" 
+                    status="primary">{{ 'EVENTS.NEXT_BUTTON' | translate }}<nb-icon icon="arrow-ios-forward-outline"></nb-icon></button>
+        </div>
+
+        <table nbTable>
+            <thead>
+                <tr>
+                    <th *ngFor="let column of displayedColumns">{{ column }}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let week of weeksInMonth">
+                    <ng-container *ngFor="let day of week">
+                        <td (click)="onSelectDay(day.date)" [class.selected]="day.date?.toString() === selectedDay?.toString()">
+                            <span>{{ day?.date?.getDate() || '-' }}</span>  
+
+                            <div *ngFor="let event of day.events">
+                                <app-event-badges class="badges" [showText]="false" [tooltip]="decodeEntities(event.text)" [eventStatus]="event.status" ></app-event-badges>
+                            </div>
+                        </td>
+                    </ng-container>
+                </tr>
+            </tbody>
+        </table>
+    </nb-card-body>
+</nb-card>

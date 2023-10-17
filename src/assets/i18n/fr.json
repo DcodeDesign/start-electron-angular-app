@@ -1,0 +1,57 @@
+{
+  "GENERATE_BRANCH": {
+    "TITLE_FORM": "Générer le nom de la branche",
+    "GENERATE_BUTTON": "GÉNÉRER",
+    "PREVIEW": "Aperçu",
+    "STATUS": {
+      "TASK": "Tâche",
+      "BUGFIX": "Correction de bug",
+      "HOTFIX": "Correction rapide",
+      "IMPROVEMENT": "Amélioration"
+    },
+    "LIST_OF_BRANCHES": "Liste des branches",
+    "DETAIL_WINDOW": {
+      "NAME": "Nom",
+      "DESCRIPTION": "Description",
+      "LINK": "Lien",
+      "ID": "ID",
+      "STATUS": "Statut",
+      "TEXT": "Texte"
+    }
+  },
+  "EVENTS": {
+    "TITLE_EDIT_FORM": "Modifier l'événement",
+    "SAVE_BUTTON": "ENREGISTRER",
+    "NEXT_BUTTON": "Suivant",
+    "ADD_BUTTON": "Ajouter",
+    "CHOICE_OF_STATUS": "Choisir un statut",
+    "PREVIOUS_BUTTON": "Précédent",
+    "STATUS": {
+      "TO_DO": "À faire",
+      "IN_PROGRESS": "En cours",
+      "COMPLETED": "Terminé"
+    },
+    "LIST_OF_EVENTS": "Liste des événements"
+  },
+  "DAY_OF_WEEK": {
+    "MONDAY": "Lundi",
+    "TUESDAY": "Mardi",
+    "WEDNESDAY": "Mercredi",
+    "THURSDAY": "Jeudi",
+    "FRIDAY": "Vendredi",
+    "SATURDAY": "Samedi",
+    "SUNDAY": "Dimanche"
+  },
+  "DAY_OF_WEEK_SHORT": {
+    "MONDAY": "Lun",
+    "TUESDAY": "Mar",
+    "WEDNESDAY": "Mer",
+    "THURSDAY": "Jeu",
+    "FRIDAY": "Ven",
+    "SATURDAY": "Sam",
+    "SUNDAY": "Dim"
+  },
+  "VALIDATION": {
+    "URL": "Veuillez entrer une URL valide."
+  }
+}
