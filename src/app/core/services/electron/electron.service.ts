@@ -1,20 +1,18 @@
+/* eslint-disable @typescript-eslint/restrict-template-expressions */
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
-// If you import a module but never use any of the imported values other than as TypeScript types,
-// the resulting javascript file will look as if you never imported the module at all.
-import { ipcRenderer, webFrame } from 'electron';
-import * as childProcess from 'child_process';
-import * as fs from 'fs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ElectronService {
-  ipcRenderer!: typeof ipcRenderer;
-  webFrame!: typeof webFrame;
-  childProcess!: typeof childProcess;
-  fs!: typeof fs;
   electron: any;
+  ipcRenderer: any;
+  webFrame: any;
+  fs: any;
+  childProcess: any;
+
 
   constructor() {
     // Conditional imports
@@ -26,7 +24,7 @@ export class ElectronService {
       this.fs = (window as any).require('fs');
 
       this.childProcess = (window as any).require('child_process');
-      this.childProcess.exec('node -v', (error, stdout, stderr) => {
+      this.childProcess.exec('node -v', (error: any, stdout: any, stderr: any) => {
         if (error) {
           console.error(`error: ${error.message}`);
           return;
@@ -63,4 +61,26 @@ export class ElectronService {
     
     return 'Web';
   }
+
+  translate(inputText: string, targetLanguage: string): Observable<string> {
+    console.log(this.electron, this.ipcRenderer, this.childProcess )
+    return new Observable<string>((observer) => {
+        if (!this.isElectron || !this.ipcRenderer) {
+            observer.error(new Error('This method is only available in Electron environment.'));
+            return;
+        }
+
+        this.ipcRenderer.once('translation-response', (event: any, translatedText: string) => {
+            observer.next(translatedText);
+            observer.complete();
+        });
+
+        this.ipcRenderer.send('translate-text', inputText, targetLanguage);
+
+        return () => {
+            // Si nécessaire, ajoutez ici du code pour nettoyer les ressources ou annuler les opérations en cours
+        };
+    });
+}
+
 }

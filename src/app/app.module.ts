@@ -20,9 +20,16 @@ import { HomeModule } from './modules/home/home.module';
 
 // Nebular
 import { NbThemeModule, NbTimepickerModule, NbDatepickerModule, NbWindowModule } from '@nebular/theme';
+import { DatabaseService } from './shared/services/database.service';
 
 // AoT requires an exported function for factories
 const httpLoaderFactory = (http: HttpClient): TranslateHttpLoader =>  new TranslateHttpLoader(http, './assets/i18n/', '.json');
+
+export function initializeApp(databaseService: DatabaseService) {
+  return (): Promise<any> => { 
+    return databaseService.initDatabase();
+  }
+}
 
 @NgModule({
   declarations: [AppComponent],
@@ -47,6 +54,14 @@ const httpLoaderFactory = (http: HttpClient): TranslateHttpLoader =>  new Transl
     NbDatepickerModule.forRoot(),
     NbWindowModule.forRoot()
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  providers: [
+    DatabaseService,
+    {
+      provide: APP_INITIALIZER,
+      useFactory: initializeApp,
+      deps: [DatabaseService],
+      multi: true
+    }]
 })
 export class AppModule {}

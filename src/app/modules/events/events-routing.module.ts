@@ -10,7 +10,11 @@ const routes: Routes = [
     resolve: { global: GlobalResolver },
     children: [
       {
-        path: '', // Utilisez un chemin spécifique si vous en avez un en tête
+        path: 'event',
+        redirectTo: 'events',
+      },
+      {
+        path: 'event',
         component: EventsComponent
       }
     ]

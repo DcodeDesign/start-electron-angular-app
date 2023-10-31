@@ -4,7 +4,8 @@ import { IBranch } from './interfaces/branch.interface';
 import { BranchStatusEnum } from './enums/branch-status.enum';
 import { urlValidator } from '../../forms/validations/url-validator';
 import { v4 as uuidv4 } from 'uuid';
-import { GoogleObj, GoogletranslateService } from '../../services/googletranslate.service';
+import { ElectronService } from '../../../core/services/electron/electron.service';
+import { ApertiumTranslateService } from '../../services/apertium-translate.service';
 
 @Component({
   selector: 'app-branch-name-generation-form',
@@ -18,8 +19,14 @@ export class BranchNameGenerationFormComponent implements OnInit {
   branchStatusEnum = BranchStatusEnum
   preview: string;
   validators = Validators
+  textToTranslate: string;
+  translatedText: string;
 
-  constructor(private fb: FormBuilder, private googletranslateService: GoogletranslateService) { }
+  constructor(
+    private fb: FormBuilder, 
+    private electronService: ElectronService,
+    private translationService: ApertiumTranslateService
+    ) { }
 
   ngOnInit(): void {
    this.initForm();
@@ -33,18 +40,15 @@ export class BranchNameGenerationFormComponent implements OnInit {
         this.preview = `${status}/${id}-${text}`
       }
     })
-
-
-    const googleObj: GoogleObj = {
-      q: ['je suis un texte.'],
-      target: 'en'
-    };
-
-    this.googletranslateService.translate(googleObj).subscribe(
-      (res: any) => {
-        console.log(res);
-      }
-    );
+    
+    this.textToTranslate = "c'est du text";
+    
+    const sourceLang = 'fr';
+    const targetLang = 'es';  // Change as needed
+    this.translationService.translate(this.textToTranslate, sourceLang, targetLang).subscribe(response => {
+      console.log(response);
+      this.translatedText = response.translatedText;  // Adjust according to the structure of the response
+    });
   }
 
   get linkControl() {

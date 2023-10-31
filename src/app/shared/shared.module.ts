@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 import { PageNotFoundComponent } from './components/';
 import { WebviewDirective } from './directives/';
@@ -24,6 +24,7 @@ import { DatabaseService } from './services/database.service';
 import { BranchNameGenerationDetailWindowComponent } from './components/branch-name-generation-detail-window/branch-name-generation-detail-window.component';
 import { EditorModule } from '@tinymce/tinymce-angular';
 import { HttpClientModule } from '@angular/common/http';
+import { ApertiumTranslateService } from './services/apertium-translate.service';
 
 @NgModule({
   declarations: [
@@ -100,7 +101,8 @@ import { HttpClientModule } from '@angular/common/http';
   providers: [
     DatabaseService,
     EventService,
-    BranchService
+    BranchService,
+    ApertiumTranslateService
   ]
 })
 export class SharedModule {}
