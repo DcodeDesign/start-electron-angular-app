@@ -13,7 +13,7 @@ function createWindow(): BrowserWindow {
 
   const size = screen.getPrimaryDisplay().workAreaSize;
 
-  const WINDOW_WIDTH = 800; // size.width
+  const WINDOW_WIDTH = 1100; // size.width
   const WINDOW_HEIGHT = 1100; // size.height
 
   //Definindo centro da tela principal
@@ -101,5 +101,6 @@ try {
 } catch (e) {
   // Catch Error
   // throw e;
+  console.log(e)
 }
 

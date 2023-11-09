@@ -11,11 +11,6 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: 'home',
-        pathMatch: 'full'
-      },
-      {
-        path: '', // Utilisez un chemin spécifique si vous en avez un en tête
         component: BranchesComponent
       }
     ]

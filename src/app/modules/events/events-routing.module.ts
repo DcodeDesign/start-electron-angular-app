@@ -6,18 +6,8 @@ import { GlobalResolver } from '../../shared/resolvers/global.resolver';
 const routes: Routes = [
   {
     path: '',
-    runGuardsAndResolvers: 'always',
-    resolve: { global: GlobalResolver },
-    children: [
-      {
-        path: 'event',
-        redirectTo: 'events',
-      },
-      {
-        path: 'event',
-        component: EventsComponent
-      }
-    ]
+    component: EventsComponent,
+    resolve: { global: GlobalResolver }
   }
 ];
 
