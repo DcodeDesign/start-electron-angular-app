@@ -3,11 +3,9 @@ const NodePolyfillPlugin = require("node-polyfill-webpack-plugin");
 module.exports = (config, options) => {
     config.target = 'electron-renderer';
 
-    // Ajout de la configuration 'externals'
     config.externals = {
         fs: 'fs',
         electron: 'electron'
-        // ... d'autres modules si nécessaire
     };
 
     if (options.fileReplacements) {

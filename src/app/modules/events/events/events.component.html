@@ -1,9 +1,0 @@
-<div class="container">
-    <app-calendar-per-month (selectDay)="onSelectedDay($event)" [events]="eventsPerMonth"></app-calendar-per-month>
-  
-    <app-event-list [selectedDay]="selectedDay" 
-                    [events]="eventsPerDay" 
-                    (createdEvent)="onCreatedEvent($event)" 
-                    (editedEvent)="onEditedEvent($event)" 
-                    (deletedEvent)="onDeletedEvent($event)"></app-event-list>
-  </div>

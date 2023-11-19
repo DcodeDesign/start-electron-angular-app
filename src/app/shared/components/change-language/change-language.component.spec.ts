@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EventBadgesComponent } from './event-badges.component';
+import { ChangeLanguageComponent } from './change-language.component';
 
-describe('EventBadgesComponent', () => {
-  let component: EventBadgesComponent;
-  let fixture: ComponentFixture<EventBadgesComponent>;
+describe('ChangeLanguageComponent', () => {
+  let component: ChangeLanguageComponent;
+  let fixture: ComponentFixture<ChangeLanguageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EventBadgesComponent ]
+      declarations: [ ChangeLanguageComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(EventBadgesComponent);
+    fixture = TestBed.createComponent(ChangeLanguageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

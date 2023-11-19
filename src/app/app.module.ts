@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { APP_INITIALIZER, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -18,18 +18,9 @@ import { AppComponent } from './app.component';
 
 import { HomeModule } from './modules/home/home.module';
 
-// Nebular
-import { NbThemeModule, NbTimepickerModule, NbDatepickerModule, NbWindowModule } from '@nebular/theme';
-import { DatabaseService } from './shared/services/database.service';
 
 // AoT requires an exported function for factories
 const httpLoaderFactory = (http: HttpClient): TranslateHttpLoader =>  new TranslateHttpLoader(http, './assets/i18n/', '.json');
-
-export function initializeApp(databaseService: DatabaseService) {
-  return (): Promise<any> => { 
-    return databaseService.initDatabase();
-  }
-}
 
 @NgModule({
   declarations: [AppComponent],
@@ -48,20 +39,9 @@ export function initializeApp(databaseService: DatabaseService) {
         deps: [HttpClient]
       }
     }),
-    BrowserAnimationsModule,
-    NbThemeModule.forRoot({ name: 'dark' }),
-    NbTimepickerModule.forRoot(),
-    NbDatepickerModule.forRoot(),
-    NbWindowModule.forRoot()
+    BrowserAnimationsModule
   ],
   bootstrap: [AppComponent],
-  providers: [
-    DatabaseService,
-    {
-      provide: APP_INITIALIZER,
-      useFactory: initializeApp,
-      deps: [DatabaseService],
-      multi: true
-    }]
+  providers: []
 })
 export class AppModule {}

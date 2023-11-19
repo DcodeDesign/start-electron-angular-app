@@ -1,0 +1,6 @@
+<div>
+    <button (click)="useLanguage(languageEnum.EN)" 
+          [class.active]="currentLang === languageEnum.EN"> {{ languageEnum.EN }} </button>
+    <button (click)="useLanguage(languageEnum.FR)" 
+          [class.active]="currentLang === languageEnum.FR"> {{ languageEnum.FR }} </button>
+</div>
