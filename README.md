@@ -1,16 +1,8 @@
 [![Angular Logo](https://www.vectorlogo.zone/logos/angular/angular-icon.svg)](https://angular.io/) [![Electron Logo](https://www.vectorlogo.zone/logos/electronjs/electronjs-icon.svg)](https://electronjs.org/)
 
-![Maintained][maintained-badge]
-[![Make a pull request][prs-badge]][prs]
-[![License][license-badge]](LICENSE.md)
-
-[![Linux Build][linux-build-badge]][linux-build]
-[![MacOS Build][macos-build-badge]][macos-build]
-[![Windows Build][windows-build-badge]][windows-build]
-
 # Introduction
 
-Bootstrap and package your project with Angular 16 and Electron 25 (Typescript + SASS + Hot Reload) for creating Desktop applications.
+Bootstrap and package your project with Angular 15 and Electron 25 (Typescript + SASS + Hot Reload) for creating Desktop applications.
 
 Currently runs with:
 
@@ -46,11 +38,6 @@ Please check `providers/electron.service.ts` to watch how conditional import of 
 
 - Web's one (like bootstrap, material, tailwind...)
     - It have to be added in `dependencies` of `package.json  (root folder)`
-
-## Add a dependency with ng-add
-
-You may encounter some difficulties with `ng-add` because this project doesn't use the defaults `@angular-builders`. \
-For example you can find [here](HOW_TO.md) how to install Angular-Material with `ng-add`.
 
 ## Browser mode
 
